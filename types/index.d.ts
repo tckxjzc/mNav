@@ -13,3 +13,6 @@ type RootState={
         effect:number
     }
 };
+interface Window {
+    addWordList;
+}

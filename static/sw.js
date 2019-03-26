@@ -7,7 +7,8 @@ this.addEventListener('fetch',function (e) {
             console.log(response.headers.get('content-type')+'---'+e.request.url)
             return response;
         }
-
+        console.log('===')
+        console.log(e.request)
 
         return fetch(e.request.clone()).then(function (response) {
             if (!response || response.status !== 200 || response.type !== "basic") {

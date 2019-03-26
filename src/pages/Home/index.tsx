@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import SearchBox from "./SearchBox";
-import {BrowserRouter} from "react-router-dom";
 import Usually from "./Usually";
+
 type Props = {
 
 };
-
 class Home extends Component<Props> {
     /**
      * lifecycle
