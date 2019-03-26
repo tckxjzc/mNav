@@ -1,0 +1,69 @@
+@import "~tz-library/style/tools";
+@import "../../styles/theme";
+
+.container {
+  width: 20rem;
+  //min-height: 100vh;
+  //padding: 0 0 2rem;
+  //background-color: #81CCF2;
+
+}
+
+.input-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  padding: 0 11px;
+  //background-color: #F7BB0F;
+  background-image: url("../../assets/images/bg.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  input[type='text'] {
+    border-radius: $height_b/2;
+    height: $height_b;
+    width: 100%;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+    border-color: $in_b_c;
+    border-style: solid;
+    border-width: 1px;
+    background-color: rgba(#fff,0.8);
+    transition: box-shadow 500ms;
+    &:focus{
+      box-shadow: 0 0 15px $in_b_c;
+    }
+  }
+}
+
+/**
+item
+ */
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3px 11px 11px;
+  //background-color: #F0A5D5;
+}
+
+.item {
+  $size:4rem;
+  display: block;
+  width: $size;
+  height: $size;
+  margin-top: 8px;
+  text-align: center;
+  line-height: $size;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: #F0A5D5;
+  border-radius: 50%;
+  border: 1px solid rgba(#fff,0);
+  transition: background-color 500ms;
+  box-shadow: 0 0 10px #E080A4;
+  &:active,
+  &:hover{
+    background-color: #E080A4;
+  }
+}

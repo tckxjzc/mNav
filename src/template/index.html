@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0">
+    <title><%=htmlWebpackPlugin.options.title%></title>
+    <script>
+
+    </script>
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+     <div id="container">
+
+     </div>
+     <script>
+         // var defineProperty = Object.defineProperty;
+         // Object.defineProperty = function (exports, name) {
+         //     if (name === '__esModule') {
+         //         exports[name] = true;
+         //         return;
+         //     }
+         //     return defineProperty.apply(this, arguments);
+         // };
+     </script>
+     <%(htmlWebpackPlugin.options.library||[]).forEach((item)=>{%>
+        <script src="<%=item%>" crossorigin="anonymous" ></script>
+     <%})%>
+</body>
+</html>

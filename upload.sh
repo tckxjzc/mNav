@@ -1,0 +1,1 @@
+scp -r ./dist/*   root@tckxjzc.xyz:/srv/static/mNav/

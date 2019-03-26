@@ -1,0 +1,19 @@
+@import "~tz-library/style/tools";
+@import "../../styles/theme";
+
+.container{
+  padding: 11px;
+  //background-color: #379BC3;
+}
+.list{
+  li{
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    border-bottom:1px solid #f2f2f2;
+  }
+  a{
+    display: block;
+    flex: 1;
+  }
+}
