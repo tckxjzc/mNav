@@ -22,6 +22,16 @@ window.addEventListener('load',()=>{
     }
 });
 
+// navigator.serviceWorker.controller.postMessage({id:'5',u:555})
+//
+//
+// navigator.serviceWorker.addEventListener('message',function (e) {
+//     console.log(`serviceWorker.onmessage o%`,e);
+// });
+
+
+
+
 if(!wbp.dev){
     setTimeout(() => {
         try {
@@ -43,3 +53,4 @@ if(!wbp.dev){
 
     }, 0);
 }
+// window.postMessage({id:"2",msg:"55"},location.href);

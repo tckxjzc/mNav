@@ -11,7 +11,7 @@ webpackConfig.entry.app.unshift(`webpack-dev-server/client?${appServer}`);
 let compiler = webpack(webpackConfig);
 let WebpackDevServer = require("webpack-dev-server");
 let server=new  WebpackDevServer(compiler,{
-    contentBase:[path.join(__dirname,'../dist'),path.join(__dirname,'../static')],
+    contentBase:[path.join(__dirname,'../dest'),path.join(__dirname,'../static')],
     host:'0.0.0.0',
     port:port,
     disableHostCheck: true,
