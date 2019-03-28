@@ -14,13 +14,13 @@ import 'tz-library/style/mobile.media.scss';
 render(<App/>,
     document.getElementById('container'));
 
-// window.addEventListener('load',()=>{
-//     if('serviceWorker' in window.navigator){
-//         window.navigator.serviceWorker.register('/sw.js').then((e)=>{
-//             console.log(e);
-//         });
-//     }
-// });
+window.addEventListener('load',()=>{
+    if('serviceWorker' in window.navigator){
+        window.navigator.serviceWorker.register(wbp.path+'/sw.js').then((e)=>{
+            console.log(e);
+        });
+    }
+});
 
 if(!wbp.dev){
     setTimeout(() => {

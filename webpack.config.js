@@ -10,7 +10,8 @@ module.exports=merge(baseConfig,{
     mode:'none',
     plugins:[
         new webpack.DefinePlugin({
-            'wbp.dev':'true'
+            'wbp.dev':'true',
+            'wbp.path':'""',
         }),
         new HtmlWebpackPlugins({
             title:title,
