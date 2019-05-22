@@ -16,7 +16,12 @@ render(<App/>,
 
 window.addEventListener('load',()=>{
     if('serviceWorker' in window.navigator){
-        window.navigator.serviceWorker.register(wbp.path+'/sw.js').then((e)=>{
+        // navigator.serviceWorker.getRegistrations().then(function (result) {
+        //     result.map(function (item) {
+        //         item.unregister()
+        //     })
+        // })
+        window.navigator.serviceWorker.register(wbp.path+'/sw-workbox.js').then((e)=>{
             console.log(e);
         });
     }

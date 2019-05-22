@@ -1,4 +1,4 @@
-var verison='1.8';
+var verison='2.1';
 var cacheCurrent='cache'+verison;
 this.addEventListener('fetch',function (e) {
     // console.log(`${e.request.url} %o`,e);
@@ -29,7 +29,7 @@ this.addEventListener('fetch',function (e) {
 // });
 
 this.addEventListener('install',function (e) {
-    console.log('sw install------')
+    console.log('sw install------');
     caches.keys().then(function (keys) {
         keys.forEach(function (item) {
             if(item!=cacheCurrent){
@@ -40,7 +40,7 @@ this.addEventListener('install',function (e) {
     this.skipWaiting();
     e.waitUntil(caches.open(cacheCurrent).then(function (cache) {
         cache.addAll([
-            '/',
+            '/mobile',
         ])
     }))
 });
@@ -58,6 +58,8 @@ this.addEventListener('install',function (e) {
 // setTimeout(function () {
 //     _self.postMessage({id:0,msg:'s0'})
 // },5000)
+self.addEventListener('activate',function(){
+   console.log('activate-----')
+});
 
-
-// console.log('sw runing');
+console.log('sw runing');

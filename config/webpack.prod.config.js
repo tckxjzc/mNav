@@ -11,10 +11,10 @@ let webpack = require('webpack');
 module.exports = merge(baseConfig, {
     mode: 'production',
     externals: {
-        'react': 'React',
-        'react-dom': 'ReactDOM',
-        'react-router-dom': 'ReactRouterDOM',
-        'swiper': 'Swiper'
+        // 'react': 'React',
+        // 'react-dom': 'ReactDOM',
+        // 'react-router-dom': 'ReactRouterDOM',
+        // 'swiper': 'Swiper'
     },
     output: {
         filename: resourceOutput + '/[name]_[hash:8].js',
@@ -40,9 +40,9 @@ module.exports = merge(baseConfig, {
             chunks: ['polyfill','main'],
             template: path.join(__dirname, '../src/template/index-load.html'),
             library: [
-                'https://cdn.bootcss.com/react/16.7.0/umd/react.production.min.js',
-                'https://cdn.bootcss.com/react-dom/16.7.0/umd/react-dom.production.min.js',
-                'https://cdn.bootcss.com/react-router-dom/4.2.2/react-router-dom.min.js',
+                // 'https://cdn.bootcss.com/react/16.7.0/umd/react.production.min.js',
+                // 'https://cdn.bootcss.com/react-dom/16.7.0/umd/react-dom.production.min.js',
+                // 'https://cdn.bootcss.com/react-router-dom/4.2.2/react-router-dom.min.js',
                 // 'https://cdnjs.cloudflare.com/ajax/libs/react/16.3.2/umd/react.production.min.js',
                 // 'https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.3.2/umd/react-dom.production.min.js',
                 // 'https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.2.2/react-router-dom.min.js'
