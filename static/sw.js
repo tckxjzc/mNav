@@ -40,7 +40,7 @@ this.addEventListener('install',function (e) {
     this.skipWaiting();
     e.waitUntil(caches.open(cacheCurrent).then(function (cache) {
         cache.addAll([
-            '/mobile',
+            './',
         ])
     }))
 });
@@ -58,8 +58,9 @@ this.addEventListener('install',function (e) {
 // setTimeout(function () {
 //     _self.postMessage({id:0,msg:'s0'})
 // },5000)
-self.addEventListener('activate',function(){
-   console.log('activate-----')
+self.addEventListener('activate',function(e){
+   e.waitUntil(clients.claim());
+    console.log('activate-----');
 });
 
 console.log('sw runing');

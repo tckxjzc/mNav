@@ -41,7 +41,7 @@ class SearchBox extends Component {
                 <Item name={'iciba'} onClick={() => this.search('https://m.iciba.com/#keyword#')}/>
                 <Item name={'Comicat'}
                       onClick={() => this.search('http://m.comicat.org/search.php?keyword=#keyword#')}/>
-                <Item name={'Nyaa'} onClick={() => this.search('https://nyaa.si/?q=#keyword#')}/>
+                {/*<Item name={'Nyaa'} onClick={() => this.search('https://nyaa.si/?q=#keyword#')}/>*/}
             </div>
         </div>
     }

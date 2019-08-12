@@ -14,20 +14,32 @@ import 'tz-library/style/mobile.media.scss';
 render(<App/>,
     document.getElementById('container'));
 
-window.addEventListener('load',()=>{
+// window.addEventListener('load',()=>{
     if('serviceWorker' in window.navigator){
+        navigator.serviceWorker.addEventListener('install',function () {
+           console.log('main:install___');
+           //controller未准备完成
+        });
+        navigator.serviceWorker.oncontrollerchange=function(){
+            //controller准备完成
+            console.log('This page is now controlled by:', navigator.serviceWorker.controller);
+        };
+
         // navigator.serviceWorker.getRegistrations().then(function (result) {
         //     result.map(function (item) {
         //         item.unregister()
         //     })
         // })
-        window.navigator.serviceWorker.register(wbp.path+'/sw-workbox.js').then((e)=>{
+        window.navigator.serviceWorker.register(wbp.path+'/sw.js').then((e)=>{
             console.log(e);
         });
     }
-});
+// });
 
-// navigator.serviceWorker.controller.postMessage({id:'5',u:555})
+// document.body.onclick=function(){console.log('5')
+//     navigator.serviceWorker.controller.postMessage({id:'5',u:555})
+// }
+
 //
 //
 // navigator.serviceWorker.addEventListener('message',function (e) {

@@ -6,26 +6,31 @@ let path=require('path');
 let fs=require('fs');
 let webpackConfig = require('../webpack.config');
 webpackConfig.entry.app=webpackConfig.entry.app||[];
-let appServer='https://dev.tckxjzc.xyz';//http://${getIp('en0')}/
+let appServer='http://localhost';//dev.tckxjzc.xyz';//http://${getIp('en0')}/
 webpackConfig.entry.app.unshift(`webpack-dev-server/client?${appServer}`);
 let compiler = webpack(webpackConfig);
 let WebpackDevServer = require("webpack-dev-server");
 let server=new  WebpackDevServer(compiler,{
-    contentBase:[path.join(__dirname,'../dest'),path.join(__dirname,'../static')],
+    contentBase:[path.join(__dirname,'../static')],
     host:'0.0.0.0',
     port:port,
     disableHostCheck: true,
     historyApiFallback: true,
-    https:{
-        key:fs.readFileSync('/Users/tckxjzc/Documents/dev_tckxjzc_xyz/dev.key'),
-        cert:fs.readFileSync('/Users/tckxjzc/Documents/dev_tckxjzc_xyz/dev.pem'),
-    },
+    // https:{
+    //     key:fs.readFileSync('/Users/tckxjzc/Documents/dev_tckxjzc_xyz/dev.key'),
+    //     cert:fs.readFileSync('/Users/tckxjzc/Documents/dev_tckxjzc_xyz/dev.pem'),
+    // },
     proxy: {
         '/api': {
             target: 'http://47.104.180.253:8200',
             pathRewrite:{'^/api':''},
             changeOrigin: true,
             secure: false
+        },
+        '/mobile': {
+            target:'https://dev.tckxjzc.xyz:8000',
+            pathRewrite:{'^/mobile':''},
+
         },
         // '/':{
         //     // target:'http://localhost',
