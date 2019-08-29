@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "tckxjzc",
   "license": "MIT",
+  "scripts": {
+    "upload":"sh ./upload.sh"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
