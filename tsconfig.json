@@ -4,6 +4,8 @@
     "module": "esnext",
     "target": "es2017",
     "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports":true,
     "sourceMap": false,
     "jsx": "preserve",

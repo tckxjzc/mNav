@@ -3,7 +3,8 @@ declare module '*.scss' {
     export = content;
 }
 declare var wbp:{
-    dev:boolean
+    dev:boolean,
+    [name:string]:any,
 };
 
 type RootState={
@@ -13,3 +14,6 @@ type RootState={
         effect:number
     }
 };
+interface Window {
+    addWordList;
+}
