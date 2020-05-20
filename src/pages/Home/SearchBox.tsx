@@ -27,11 +27,14 @@ class SearchBox extends Component {
     render() {
         return <div className={styles.container}>
             <div className={styles["input-box"]}>
-                <input onChange={this.onChange}   ref={this.input} type={'text'} placeholder={'keyword'}/>
+                <input onChange={this.onChange}
+                       onBlur={this.onBlur}
+                       onFocus={this.onFocus}
+                       ref={this.input} type={'text'} placeholder={'keyword'}/>
                 <ul>
-                    {searchBoxData.words.map((item)=>{
+                    {searchBoxData.show?searchBoxData.words.map((item)=>{
                         return <li onClick={()=>this.selectWord(item)} key={item}>{item}</li>
-                    })}
+                    }):null}
                 </ul>
             </div>
             <div className={styles.list}>
@@ -62,6 +65,15 @@ class SearchBox extends Component {
         } else {
             searchBoxData.words=[];
         }
+
+    };
+    onFocus=()=>{
+        searchBoxData.show=true;
+    };
+    onBlur=()=>{
+        setTimeout(()=>{
+            searchBoxData.show=false;
+        },80);
 
     };
 

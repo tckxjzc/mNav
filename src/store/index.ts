@@ -50,6 +50,7 @@ export let bookmarks = [
 export  let searchBoxData=observable({
     words:[
     ],
+    show:false
 });
 
 

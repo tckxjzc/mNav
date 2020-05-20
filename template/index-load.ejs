@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0">
-    <meta  name="msapplication-TileColor" content="#F0A5D5"/>
-    <meta  name="theme-color" content="#F0A5D5"/>
-    <link rel="manifest" href="/mobile/manifest.json">
+    <meta name="msapplication-TileColor" content="#F0A5D5"/>
+    <meta name="theme-color" content="#F0A5D5"/>
+    <link rel="manifest" href="/manifest.json">
     <style type="text/css">
         @-webkit-keyframes spin-pulse_eee06145 {
             from {
@@ -137,9 +137,11 @@
             -webkit-animation-delay: 0s;
             animation-delay: 0s;
         }
-        div{
+
+        div {
             box-sizing: border-box;
         }
+
         html, body, #container {
             padding: 0;
             margin: 0;
@@ -147,7 +149,7 @@
         }
 
     </style>
-    <title><%=htmlWebpackPlugin.options.title%></title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
     <script>
         (function () {
             window.onerror = function (msg, url, line, col, error) {
@@ -166,7 +168,7 @@
 </head>
 <body>
 <div id="container">
-    <div class="container_db01d807" >
+    <div class="container_db01d807">
         <div class="load_73e3aebe">
             <div class="outer_9a82ec54">
 
@@ -176,8 +178,10 @@
         </div>
     </div>
 </div>
-<%(htmlWebpackPlugin.options.library||[]).forEach((item)=>{%>
-<script crossorigin='anonymous' src="<%=item%>"></script>
-<%})%>
+<% (htmlWebpackPlugin.options.library || []).forEach((item)=>{ %>
+<script crossorigin='anonymous' src="<%= item %>"></script>
+<% }) %>
+
+<%= htmlWebpackPlugin.tags.bodyTags %>
 </body>
 </html>

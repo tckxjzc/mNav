@@ -27,5 +27,6 @@
      <%(htmlWebpackPlugin.options.library||[]).forEach((item)=>{%>
         <script src="<%=item%>" crossorigin="anonymous" ></script>
      <%})%>
+     <%= htmlWebpackPlugin.tags.bodyTags %>
 </body>
 </html>

@@ -13,7 +13,7 @@ class Home extends Component<Props> {
 
     constructor(props) {
         super(props);
-        if(wbp.dev){
+        if(DEVELOPMENT){
             console.log(this);
         }
     }

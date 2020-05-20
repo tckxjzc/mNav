@@ -1,19 +1,18 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "module": "esnext",
     "target": "es2017",
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "allowSyntheticDefaultImports":true,
     "sourceMap": false,
     "jsx": "preserve",
     "baseUrl": ".",
     "typeRoots": [
       "./types",
-      "node_modules/@types",
-      "node_modules/tz-library/@types"
+      "node_modules/@types"
     ],
     "paths": {
       "*": [
@@ -26,7 +25,6 @@
   "include": [
     "src/**/*",
     "types/*",
-    "node_modules/@types/**/*",
-    "node_modules/tz-library/**/*"
+    "node_modules/@types/**/*"
   ]
 }

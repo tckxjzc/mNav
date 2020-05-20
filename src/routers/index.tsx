@@ -6,7 +6,7 @@ import Home from 'pages/Home';
 export default <Router history={history}>
     <Route render={({location})=>{
         return <Switch location={location}>
-            <Route path={'/'}  component={Home}/>} />
+            <Route path={'/'}  component={Home} />
         </Switch>
     }} />
 </Router>

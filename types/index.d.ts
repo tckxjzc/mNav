@@ -7,13 +7,15 @@ declare var wbp:{
     [name:string]:any,
 };
 
-type RootState={
-    loading:{
-        prev:number,
-        shade:number,
-        effect:number
-    }
-};
+declare var DEVELOPMENT:boolean;
+
+// type RootState={
+//     loading:{
+//         prev:number,
+//         shade:number,
+//         effect:number
+//     }
+// };
 interface Window {
     addWordList;
 }

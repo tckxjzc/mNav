@@ -30,7 +30,7 @@ render(<App/>,
         //         item.unregister()
         //     })
         // })
-        window.navigator.serviceWorker.register(wbp.path+'/sw.js').then((e)=>{
+        window.navigator.serviceWorker.register('/sw-workbox.js').then((e)=>{
             console.log(e);
         });
     }
@@ -49,7 +49,7 @@ render(<App/>,
 
 
 
-if(!wbp.dev){
+if(DEVELOPMENT){
     setTimeout(() => {
         try {
             let speed = {
@@ -58,12 +58,12 @@ if(!wbp.dev){
                 type: 1,
                 entries: JSON.stringify(performance.getEntries()),
             };
-
-            fetch('//up.tckxjzc.xyz/upload/speed', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(speed)
-            });
+            console.log(speed)
+            // fetch('//up.tckxjzc.xyz/upload/speed', {
+            //     method: 'POST',
+            //     headers: {'Content-Type': 'application/json'},
+            //     body: JSON.stringify(speed)
+            // });
         } catch (e) {
             console.log(e);
         }
