@@ -33,6 +33,7 @@ const prodsHtmlList = [
         template: baseTemplate,
         filename: `index.html`,
         inject: false,
+        title:'Tz导航',
         chunks: ['index'],
         chunksSortMode: 'manual'
     })

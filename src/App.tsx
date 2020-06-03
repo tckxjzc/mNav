@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import routers from './routers';
+// import routers from './routers';
+import Home from "pages/Home";
 
 
 type Props = {};
@@ -24,7 +25,7 @@ class App extends Component<Props> {
 
     render() {
         return <React.Fragment>
-            {routers}
+            {<Home />}
         </React.Fragment>;
     }
 

@@ -1,3 +1,11 @@
+const arr=[];
+//放workbox前面，才能看到全部请求，否则不会显示workbox处理过的请求
+self.addEventListener('fetch',(envent)=>{
+    arr.push(envent.request.clone().url);
+    console.log(arr);
+});
+
+
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
 
