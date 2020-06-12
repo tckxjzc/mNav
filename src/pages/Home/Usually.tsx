@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import styles from './usually.scss';
 import {bookmarks} from "../../store";
+import {observer} from "mobx-react";
 
-
+@observer
 class Usually extends Component {
     render() {
         return <div className={styles.container}>

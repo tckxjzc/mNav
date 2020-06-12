@@ -2,6 +2,7 @@
 @import "../../styles/theme";
 
 .container {
+  position: relative;
   width: 20rem;
   //min-height: 100vh;
   //padding: 0 0 2rem;
@@ -85,4 +86,20 @@ item
   &:hover{
     background-color: #E080A4;
   }
+}
+.switch-hidden-url{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+}
+.clear-history-word{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
 }

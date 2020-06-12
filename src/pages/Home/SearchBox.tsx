@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from './search_box.scss';
-import {searchBoxData} from "../../store";
+import {clearHistoryWord, historyWord, saveHistoryWord, searchBoxData, showHiddenUrl} from "../../store";
 import {observer} from "mobx-react";
 import {addScriptElement} from "../../utils";
 
@@ -46,6 +46,11 @@ class SearchBox extends Component {
                       onClick={() => this.search('http://m.comicat.org/search.php?keyword=#keyword#')}/>
                 {/*<Item name={'Nyaa'} onClick={() => this.search('https://nyaa.si/?q=#keyword#')}/>*/}
             </div>
+
+            <div onClick={showHiddenUrl()} className={styles['switch-hidden-url']}>
+            </div>
+            <div onClick={clearHistoryWord()} className={styles['clear-history-word']}>
+            </div>
         </div>
     }
 
@@ -63,7 +68,7 @@ class SearchBox extends Component {
             this.wordUrl.searchParams.set('pwd', val);
             addScriptElement(this.wordUrl.href);
         } else {
-            searchBoxData.words=[];
+            searchBoxData.words=historyWord;
         }
 
     };
@@ -88,7 +93,9 @@ class SearchBox extends Component {
     };
 
     search = (url: string = 'https://m.baidu.com/s?wd=#keyword#') => {
-        location.href = url.replace('#keyword#', this.input.current.value);
+        const word=this.input.current.value;
+        saveHistoryWord(word);
+        location.href = url.replace('#keyword#', word);
     };
 
 }
